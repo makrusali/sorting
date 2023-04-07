@@ -197,8 +197,7 @@ function init() {
             this.html += `</tr></table>`;
         }
 
-        render(el) {
-            console.log(this.html);
+        render() {
             resultContainer.innerHTML = this.html;
         }
     }
