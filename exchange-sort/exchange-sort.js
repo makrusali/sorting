@@ -123,14 +123,14 @@ function init() {
                         swapped = true;
                     }
 
-                    view.addRow(input, i, j + 2, [`apakah ${pivot} >= ${next}`, swapped ? `ya -- tukar` : `tidak -- tetap`]);
+                    view.addRow(input, i, j - i + 2, [`apakah ${pivot} >= ${next}`, swapped ? `ya -- tukar` : `tidak -- tetap`]);
 
                 } else {
                     if (pivot <= next) {
                         swapped = true;
                     }
 
-                    view.addRow(input, i, j + 2, [`apakah ${pivot} <= ${next}`, swapped ? `ya -- tukar` : `tidak -- tetap`]);
+                    view.addRow(input, i, j - i + 2, [`apakah ${pivot} <= ${next}`, swapped ? `ya -- tukar` : `tidak -- tetap`]);
                 }
 
                 if (swapped) {
