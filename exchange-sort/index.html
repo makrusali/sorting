@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exchange Sort | Sort</title>
+    <style>
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        .td_item {
+            padding: 28px;
+            font-size: xx-large;
+        }
+
+        .td_arrow {
+            border: none;
+            padding: 0px 30px;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        .tooltip {
+            position: absolute;
+            display: inline-block;
+            border: 1px dashed rgb(205, 205, 205);
+            background-color: rgb(251, 251, 251);
+            top: -60px;
+            border-radius: 12px;
+            padding: 8px;
+            box-shadow: 1px 1px 4px rgb(243, 243, 243);
+        }
+
+        .td_arrow:hover .tooltip__hidden {
+            scale: 1;
+            transition-delay: 0ms;
+            transition-duration: 200ms;
+        }
+
+        .tooltip__hidden {
+            transition-delay: 500ms;
+            transition-duration: 200ms;
+            scale: 0;
+        }
+
+        .item__yellow {
+            background-color: yellow;
+        }
+
+        .item__green {
+            background-color: rgb(108, 255, 108);
+        }
+
+        .td__hidden {
+            height: 50px;
+            border: none;
+        }
+
+        .td_header {
+            font-size: larger;
+            display: block;
+            border: none;
+            margin-bottom: 24px;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            row-gap: 12px;
+        }
+
+        .form_input {
+            padding: 12px 8px;
+            font-size: large;
+        }
+
+        .form_button {
+            padding: 12px;
+            background-color: aliceblue;
+            border: 1px dashed black;
+            cursor: pointer;
+            font-size: large;
+            transition-duration: 200ms;
+        }
+
+        .form_button:hover {
+            box-shadow: 1px 1px 12px rgb(243, 243, 243);
+        }
+
+        .form_label {
+            color: rgb(69, 69, 69);
+        }
+
+        main {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .arrow {
+            width: 97%;
+            height: 40px;
+            display: inline-block;
+            margin-left: auto;
+            margin-top: 20px;
+            margin-right: auto;
+            border-radius: 50px 50px 0px 0px;
+            border-right: 2px dashed black;
+            border-left: 2px dashed black;
+            border-top: 2px dashed black;
+            position: relative;
+        }
+
+        .arrow:hover {
+            border-right: 2px dashed red;
+            border-left: 2px dashed red;
+            border-top: 2px dashed red;
+        }
+
+        .arrow:hover .pointer_left {
+            filter: invert(11%) sepia(90%) saturate(6759%) hue-rotate(5deg) brightness(102%) contrast(116%);
+        }
+
+        .arrow:hover .pointer_right {
+            filter: invert(11%) sepia(90%) saturate(6759%) hue-rotate(5deg) brightness(102%) contrast(116%);
+        }
+
+        .pointer_left {
+            position: absolute;
+            bottom: -11px;
+            left: -11px;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .pointer_right {
+            position: absolute;
+            bottom: -11px;
+            right: -11px;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .pointer_img {
+            height: 20px;
+            width: 20px;
+        }
+    </style>
+</head>
+
+<body style="margin: 100px 0px; font-family: sans-serif;" onload="init()">
+    <main>
+        <form action="" class="form">
+            <label for="i-data" class="form_label">Masukkan Data</label>
+            <input type="text" name="" id="i-data" class="form_input">
+            <button class="form_button" id="btn-sort">Urutkan</button>
+
+            <div style="display: flex; column-gap: 26px;">
+                <div>
+                    <label for="">Ascending</label>
+                    <input type="radio" name="method" checked id="rb-asc">
+                </div>
+                <div>
+                    <label for="">Descending</label>
+                    <input type="radio" name="method" id="rb-desc">
+                </div>
+            </div>
+        </form>
+
+        <div id="result-container">
+
+        </div>
+    </main>
+
+    <script src="./exchange-sort.js"></script>
+</body>
+
+</html>
