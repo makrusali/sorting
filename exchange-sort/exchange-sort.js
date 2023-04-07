@@ -32,8 +32,8 @@ function init() {
         return c === ' ';
     }
 
-    function isEOC(str, c) {
-        return str.slice(-1) == c;
+    function isDot(c) {
+        return  c == '.';
     }
 
     function parse(input) {
@@ -49,7 +49,7 @@ function init() {
             switch (state) {
                 case 0:
                     //  5 25
-                    if (isNumber(c)) {
+                    if (isNumber(c) || isDot(c)) {
                         numBuf += c;
 
                         if (i == sizeInput - 1) {
