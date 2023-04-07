@@ -36,6 +36,10 @@ function init() {
         return  c == '.';
     }
 
+    function isMin(c) {
+        return c == '-';
+    }
+
     function parse(input) {
         let token = [];
         let state = 0;
@@ -49,7 +53,7 @@ function init() {
             switch (state) {
                 case 0:
                     //  5 25
-                    if (isNumber(c) || isDot(c)) {
+                    if (isNumber(c) || isDot(c) || isMin(c)) {
                         numBuf += c;
 
                         if (i == sizeInput - 1) {
@@ -68,7 +72,7 @@ function init() {
                     console.log('invalid token ', c);
                     break;
                 case 1:
-                    if (isNumber(c)) {
+                    if (isNumber(c) || isMin(c)) {
                         numBuf += c;
                         state = 0;
 
