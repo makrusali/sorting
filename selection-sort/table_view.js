@@ -31,6 +31,7 @@ class TableViewer {
       }
     }
     this.html += `</tr> `;
+    this.html += `
     <div class="tooltip">
       <p>${tooltip[0]}</p>
       <p>${tooltip[1]}</p>
@@ -38,7 +39,7 @@ class TableViewer {
     </div>`;
 
     // bagian 3
-    this.html += `< tr">`;
+    this.html += `<tr">`;
     for (let x = 0; x <= data.length + 1; x++) {
       if (x == pos) {
         this.html += `<td class="td_item n_border">pos</td>`;
@@ -52,7 +53,7 @@ class TableViewer {
   }
   addSwapped(i, pos, j, tooltip, data) {
     this.html += `<table>`;
-    // bagian 1
+    // part 1
     this.html += `<tr style="border: 1px solid black;">`;
     for (let x = 0; x < data.length; x++) {
       if (x == i) {
@@ -63,7 +64,7 @@ class TableViewer {
     }
     this.html += `</tr>`
 
-    // bagian 2
+    // part 2
     this.html += `<tr>`;
     this.html += `
     <div class="tooltip">
@@ -80,7 +81,7 @@ class TableViewer {
     }
     this.html += `</tr> `
 
-    // bagian 3
+    // part 3
     this.html += `<tr">`;
     for (let x = 0; x <= data.length + 1; x++) {
       if (x == pos) {
