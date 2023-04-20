@@ -30,7 +30,8 @@ class TableViewer {
         this.html += `<td class="td_item">${data[x]}</td >`;
       }
     }
-    this.html += `</tr> `;
+
+    this.html += `</tr>`;
     this.html += `
     <div class="tooltip">
       <p>${tooltip[0]}</p>
@@ -38,7 +39,7 @@ class TableViewer {
       <p>${tooltip[2]}</p>
     </div>`;
 
-    // bagian 3
+    // part 3
     this.html += `<tr">`;
     for (let x = 0; x <= data.length + 1; x++) {
       if (x == pos) {
