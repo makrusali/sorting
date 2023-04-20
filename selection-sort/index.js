@@ -49,7 +49,7 @@ function init() {
           }
         }
 
-        view.addProcess(i, tempPos, tempJ, [`apakah data[pos] >= data[j]`, `apakah ${token[pos]} ${isAsc ? ">=" : "<="} ${token[j]}`, `${swapped ? "Ya, pos = j, j = j + 1" : "tidak, pos = pos, j = j + 1"}`], token);
+        view.addProcess(i, tempPos, tempJ, [`apakah data[pos] >= data[j]`, `apakah ${token[tempPos]} ${isAsc ? ">=" : "<="} ${token[tempJ]}`, `${swapped ? "Ya, pos = j, j = j + 1" : "tidak, pos = pos, j = j + 1"}`], token);
         view.addDivider();
       }
 

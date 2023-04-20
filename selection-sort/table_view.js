@@ -22,12 +22,7 @@ class TableViewer {
 
     // bagian 2
     this.html += `<tr>`;
-    this.html += `
-    <div class="tooltip">
-      <p>${tooltip[0]}</p>
-      <p>${tooltip[1]}</p>
-      <p>${tooltip[2]}</p>
-    </div>`;
+
     for (let x = 0; x < data.length; x++) {
       if (x == pos || x == j) {
         this.html += `<td class="td_item item__yellow2">${data[x]}</td>`;
@@ -35,10 +30,15 @@ class TableViewer {
         this.html += `<td class="td_item">${data[x]}</td >`;
       }
     }
-    this.html += `</tr> `
+    this.html += `</tr> `;
+    <div class="tooltip">
+      <p>${tooltip[0]}</p>
+      <p>${tooltip[1]}</p>
+      <p>${tooltip[2]}</p>
+    </div>`;
 
     // bagian 3
-    this.html += `<tr">`;
+    this.html += `< tr">`;
     for (let x = 0; x <= data.length + 1; x++) {
       if (x == pos) {
         this.html += `<td class="td_item n_border">pos</td>`;
